@@ -19,10 +19,11 @@ while(1){
     int status;
     write(fd[1],m,strlen(m));
     read(fd[0],string,255);
-    
+    char ctrd=4;
+    char *cc=&ctrd;
     int l = strlen (string);
     if (l > 0 && string [l - 1] == '\n') string [l - 1] = '\0';
-    if((strcmp(string,"exit")==0)||(strcmp(string,"")==0)){
+    if((strcmp(string,"exit")==0)||(strcmp(string,cc)==0)){
         
         write(fd[1],"exiting\n",8);
         break;
